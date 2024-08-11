@@ -1,0 +1,83 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">{{_("الصفحه الرئيسيه")}}</a></li>
+          <li>{{_("خدماتنا")}}</li>
+        </ol>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-12 entries">
+
+            <article class="entry">
+
+              <div class="entry-img">
+                <img src="/assets/trigger_solutions/trigger/assets/img/portfolio/low/low-1.jpeg" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="low-current.html">{{_("أنظمه التيار الخفيف")}}</a>
+              </h2>
+
+
+              <div class="entry-content">
+                <!-- <p>
+                  أنظمه التيار الخفيف أنظمه التيار الخفيف أنظمه التيار الخفيف أنظمه التيار الخفيف أنظمه التيار الخفيف
+                </p> -->
+                <div class="read-more">
+                  <a href="low-current.html">{{_("متابعه القراءه")}}</a>
+                </div>
+              </div>
+
+            </article><!-- End blog entry -->
+
+            <article class="entry">
+
+              <div class="entry-img">
+                <img src="/assets/trigger_solutions/trigger/assets/img/portfolio/erp/erp-1.png" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="erp.html">{{_("برامج وأنظمة الإدارة للشركات (ERP)")}}</a>
+              </h2>
+
+            
+
+              <div class="entry-content">
+                <!-- <p>
+                  برامج وأنظمة الإدارة للشركات (ERP) برامج وأنظمة الإدارة للشركات (ERP) برامج وأنظمة الإدارة للشركات (ERP) برامج وأنظمة الإدارة للشركات (ERP)
+                </p> -->
+                <div class="read-more">
+                  <a href="erp.html">{{_("متابعه القراءه")}}</a>
+                </div>
+              </div>
+            </article><!-- End blog entry -->
+
+           
+
+          </div><!-- End blog entries list -->
+
+        
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+  {% endblock %}

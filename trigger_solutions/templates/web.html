@@ -1,0 +1,110 @@
+{% extends base_template_path %}
+
+{% block content %}
+
+{% macro main_content() %}
+ <!-- Favicons -->
+ <link href="/assets/trigger_solutions/images/Trigger-Solutions-Logo.png" rel="icon">
+ <link href="/assets/trigger_solutions/images/Trigger-Solutions-Logo.png" rel="apple-touch-icon">
+
+ <!-- Google Fonts -->
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+ <!-- Vendor CSS Files -->
+ <!-- <link href="/assets/trigger_solutions/trigger/assets/vendor/aos/aos.css" rel="stylesheet"> -->
+ <link href="/assets/trigger_solutions/trigger/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="/assets/trigger_solutions/trigger/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+ <link href="/assets/trigger_solutions/trigger/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+ <link href="/assets/trigger_solutions/trigger/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+ <link href="/assets/trigger_solutions/trigger/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+ <!-- Template Main CSS File -->
+ <link href="/assets/trigger_solutions/trigger/assets/css/style.css" rel="stylesheet">
+
+ <div class="page-content-wrapper">
+	<!-- breadcrumbs -->
+	<div class="page-breadcrumbs">
+		{% block breadcrumbs %}
+			{% include 'templates/includes/breadcrumbs.html' %}
+		{% endblock %}
+	</div>
+
+	{% block page_container %}
+	<main class="{% if not full_width %}container my-4{% endif %}">
+		
+		<section class="contact" data-aos="fade-up">
+			<div class="d-flex justify-content-between align-items-center">
+				<div class="page-header" style="color: #4154f1;">
+					{% block header %}{% endblock %}
+				</div>
+	
+				{% if self.header_actions() %}
+				<div class="page-header-actions-block" style="color: #4154f1;">
+					{% block header_actions %}{% endblock %}
+				</div>
+				{% endif %}
+			</div>
+			<div class="page_content" style="color: #4154f1;">
+				{%- block page_content -%}{%- endblock -%}
+			</div>
+	
+			<div class="page-footer" style="color: #4154f1;">
+				{%- block page_footer -%}{%- endblock -%}
+			</div>
+		</section>
+		
+	</main>
+	{% endblock %}
+</div>
+{% endmacro %}
+
+{% macro container_attributes() -%}
+id="page-{{ name or route | e }}" data-path="{{ pathname | e }}"
+{%- if page_or_generator=="Generator" %}source-type="Generator" data-doctype="{{ doctype }}"{%- endif %}
+{%- if source_content_type %}source-content-type="{{ source_content_type }}"{%- endif %}
+{%- endmacro %}
+
+{% macro sidebar() %}
+<div class="sidebar-column col-sm-{{ columns }}">
+	{% block page_sidebar %}
+	{% include "templates/includes/web_sidebar.html" %}
+	{% endblock %}
+</div>
+{% endmacro %}
+
+{% if show_sidebar %}
+<div class="container">
+
+	<div class="row" {{ container_attributes() }}>
+		{%- set columns = sidebar_columns or 2 -%}
+		{%- if not sidebar_right -%}
+		{{ sidebar() }}
+		{%- endif -%}
+		<div class="main-column col-sm-{{ 12 - columns }}">
+			{{ main_content() }}
+		</div>
+		{%- if sidebar_right -%}
+		{{ sidebar() }}
+		{%- endif -%}
+	</div>
+</div>
+{% else %}
+<div {{ container_attributes() }}>
+	{{ main_content() }}
+</div>
+{% endif %}
+
+{% endblock %}
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="/assets/trigger_solutions/trigger/assets/vendor/purecounter/purecounter.js"></script>
+<script src="/assets/trigger_solutions/trigger/assets/vendor/aos/aos.js"></script>
+<script src="/assets/trigger_solutions/trigger/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/trigger_solutions/trigger/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/assets/trigger_solutions/trigger/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/assets/trigger_solutions/trigger/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<!-- <script src="/assets/trigger_solutions/trigger/assets/vendor/php-email-form/validate.js"></script> -->
+
+<!-- Template Main JS File -->
+<script src="/assets/trigger_solutions/trigger/assets/js/main.js"></script>

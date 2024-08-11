@@ -1,0 +1,66 @@
+
+{% extends 'templates/base.html' %}
+
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">{{_("الصفحه الرئيسيه")}}</a></li>
+          <li><a href="services.html">{{_("خدمــاتنــا")}} </a></li>
+          <li>{{_("خدمات التيار الخفيف")}}</li>
+        </ol>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="/assets/trigger_solutions/trigger/assets/img/portfolio/low/1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="/assets/trigger_solutions/trigger/assets/img/portfolio/low/low-1.jpeg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="/assets/trigger_solutions/trigger/assets/img/portfolio/low/2.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            
+            <div class="portfolio-description">
+              <h2>{{_("كاميرات مراقبة")}}</h2>
+              <h2>{{_("أجهزة حضور وانصراف")}}</h2>
+              <h2>{{_("حلول شبكات")}}</h2>
+              <h2>{{_("سنترالات")}}</h2>
+              <h2>{{_("أجهزة إنذار السرقة")}}</h2>
+              <h2>{{_("أجهزة تتبع سيارات")}}</h2>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock %}
